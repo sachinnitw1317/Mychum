@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:background="#f5222222" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginRight="2.0dip">
+        <TextView android:textAppearance="?android:textAppearanceLarge" android:textColor="#ffffffff" android:layout_gravity="center_vertical" android:id="@+id/weekview_day_header" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="Dev" android:layout_weight="1.0" />
+        <ImageView android:layout_gravity="center_vertical" android:id="@+id/ivShowTimetable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:src="@drawable/ic_weekview" />
+    </LinearLayout>
+    <LinearLayout android:background="#f5f5f5f5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="2.0dip">
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:textStyle="bold" android:textColor="#ff000000" android:gravity="center" android:id="@+id/day1" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Mon" android:layout_weight="1.0" />
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:textStyle="bold" android:textColor="#ff000000" android:gravity="center" android:id="@+id/day2" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Tue" android:layout_weight="1.0" />
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:textStyle="bold" android:textColor="#ff000000" android:gravity="center" android:id="@+id/day3" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Wed" android:layout_weight="1.0" />
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:textStyle="bold" android:textColor="#ff000000" android:gravity="center" android:id="@+id/day4" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Thu" android:layout_weight="1.0" />
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:textStyle="bold" android:textColor="#ff000000" android:gravity="center" android:id="@+id/day5" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Fri" android:layout_weight="1.0" />
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:textStyle="bold" android:textColor="#ff000000" android:gravity="center" android:id="@+id/day6" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Sat" android:layout_weight="1.0" />
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:textStyle="bold" android:textColor="#ff000000" android:gravity="center" android:id="@+id/day7" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Sun" android:layout_weight="1.0" />
+    </LinearLayout>
+    <ListView android:id="@+id/lv_Weektimetable" android:layout_width="fill_parent" android:layout_height="wrap_content" android:divider="@null" />
+</LinearLayout>

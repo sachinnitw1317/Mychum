@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ android:orientation="vertical"
+ android:layout_width="fill_parent"
+ android:layout_height="fill_parent"
+    android:id="@+id/layout">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView2">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <Button
+                android:id="@+id/viewAlarms"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="View"
+
+                />
+
+
+            <DatePicker
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/alarmdate"
+                android:layout_gravity="center_horizontal" />
+ <TimePicker
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:id="@+id/timePicker"
+     android:layout_gravity="center_horizontal" />
+
+
+
+<Button
+ android:id="@+id/startalarm"
+ android:layout_width="fill_parent"
+ android:layout_height="wrap_content"
+ android:text="Start"
+ />
+<Button
+ android:id="@+id/cancelalarm"
+ android:layout_width="fill_parent"
+ android:layout_height="wrap_content"
+ android:text="Cancel"
+ />
+
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Snooze"
+                android:id="@+id/checksnooze"
+                android:checked="true" />
+
+            <TextView
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:text="New Text"
+     android:id="@+id/tvalarms" />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Snooze Time : "
+         />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ok"
+        android:id="@+id/button"
+        android:onClick="changeSnooze"
+        android:layout_gravity="right" />
+
+    <EditText
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:inputType="number"
+     android:ems="10"
+     android:id="@+id/snoozemin" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Snooze Mode"
+            android:id="@+id/radioButtonSnooze"
+            android:layout_gravity="center_horizontal"
+            android:checked="true" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Math Mode"
+            android:id="@+id/radioButtonMath"
+            android:layout_gravity="center_horizontal" />
+
+
+    </RadioGroup>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="S"
+        android:id="@+id/day0"
+        android:checked="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="M"
+        android:id="@+id/day1"
+        android:checked="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="T"
+        android:id="@+id/day2"
+        android:checked="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="W"
+        android:id="@+id/day3"
+        android:checked="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Th"
+        android:id="@+id/day4"
+        android:checked="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="F"
+        android:id="@+id/day5"
+        android:checked="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sa"
+        android:id="@+id/day6"
+        android:checked="true" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
+    </ScrollView>
+</LinearLayout>

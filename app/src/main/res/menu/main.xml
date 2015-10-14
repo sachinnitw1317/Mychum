@@ -1,0 +1,7 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_settings" android:title="@string/action_settings" />
+    <item
+        android:id="@+id/action_add"
+        android:title="Add Course"
+        android:icon="@drawable/abc_ic_search_api_mtrl_alpha"/>
+</menu>

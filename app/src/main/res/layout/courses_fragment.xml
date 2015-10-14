@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:timetable="http://schemas.android.com/apk/res-auto"
+    xmlns:mychum="http://schemas.android.com/tools">
+    <LinearLayout android:orientation="vertical" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+            <TextView android:textAppearance="?android:textAppearanceLarge" android:textSize="50.0sp" android:textColor="#ff000000" android:id="@+id/tvTitleSubjects" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="@string/subjects" />
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@+id/noSubjects" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <ImageView android:layout_width="120.0dip" android:layout_height="120.0dip" android:src="@drawable/lightgreytimetable" />
+                <TextView android:textAppearance="?android:textAppearanceMedium" android:textStyle="bold" android:textColor="#ffdedede" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="noSubjectsShort" />
+            </LinearLayout>
+            <ListView android:id="@+id/lv_courses" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="10.0dip" />
+        </LinearLayout>
+    </LinearLayout>
+    <ImageButton
+        android:id="@+id/Courses_fabbutton"
+        android:visibility="gone" android:layout_width="72.0dip" android:layout_height="72.0dip" android:layout_marginRight="16.0dip" android:layout_marginBottom="16.0dip"
+        android:layout_gravity="bottom|right|center"
+        android:src="@android:drawable/ic_input_add"
+        />
+
+    <ImageButton
+        android:id="@+id/Courses_addbutton"
+         android:layout_width="72.0dip" android:layout_height="72.0dip" android:layout_marginRight="16.0dip" android:layout_marginBottom="16.0dip"
+        android:layout_gravity="top|right"
+        android:background="@drawable/ic_action_add" />
+    </FrameLayout>
