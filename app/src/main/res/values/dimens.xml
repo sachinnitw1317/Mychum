@@ -17,5 +17,8 @@
     <dimen name="abc_search_view_text_min_width">192.0dip</dimen>
 
 
+        <dimen name="fab_margin">16dp</dimen>
+
+
 
 </resources>

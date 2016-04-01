@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.design.widget.FloatingActionButton;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,7 +37,7 @@ public class CoursesFragment extends Fragment {
     SQLiteDatabase db_obj;
     Cursor cursor;
     ListView courseList;
-    ImageButton addButton;
+    FloatingActionButton addButton;
 
     /**
      * Use this factory method to create a new instance of
@@ -68,6 +69,7 @@ public class CoursesFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
         dbhelper_obj= new DatabaseHelper(getActivity());
+
     }
 
     @Override
@@ -76,8 +78,9 @@ public class CoursesFragment extends Fragment {
         // Inflate the layout for this fragment
         View fragView =  inflater.inflate(R.layout.courses_fragment, container, false);
         courseList = (ListView) fragView.findViewById(R.id.lv_courses);
-        addButton = (ImageButton) fragView.findViewById(R.id.Courses_addbutton);
+        addButton = (FloatingActionButton) fragView.findViewById(R.id.Courses_addbutton);
         final FragmentManager fragManager = getFragmentManager();
+
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

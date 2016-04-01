@@ -8,9 +8,9 @@ import android.graphics.drawable.Drawable;
  */
 public class NavigationItem {
     private String mText;
-    private Drawable mDrawable;
+    private int mDrawable;
 
-    public NavigationItem(String text, Drawable drawable) {
+    public NavigationItem(String text,int drawable) {
         mText = text;
         mDrawable = drawable;
     }
@@ -23,11 +23,11 @@ public class NavigationItem {
         mText = text;
     }
 
-    public Drawable getDrawable() {
+    public int getDrawable() {
         return mDrawable;
     }
 
-    public void setDrawable(Drawable drawable) {
+    public void setDrawable(int drawable) {
         mDrawable = drawable;
     }
 }

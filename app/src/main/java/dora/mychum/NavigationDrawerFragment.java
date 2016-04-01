@@ -119,14 +119,14 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
 
     public List<NavigationItem> getMenu() {
         List<NavigationItem> items = new ArrayList<NavigationItem>();
-        items.add(new NavigationItem("Dashboard", getResources().getDrawable(R.drawable.ic_menu_check)));
-        items.add(new NavigationItem("Wake Me", getResources().getDrawable(R.drawable.ic_menu_check)));
-        items.add(new NavigationItem("TimeTable", getResources().getDrawable(R.drawable.ic_menu_check)));
-        items.add(new NavigationItem("Attendance", getResources().getDrawable(R.drawable.ic_menu_check)));
-        items.add(new NavigationItem("Course", getResources().getDrawable(R.drawable.ic_menu_check)));
-        items.add(new NavigationItem("Alarm", getResources().getDrawable(R.drawable.ic_action_alarm)));
-        items.add(new NavigationItem("Settings", getResources().getDrawable(R.drawable.ic_menu_check)));
-        items.add(new NavigationItem("Help", getResources().getDrawable(R.drawable.ic_menu_check)));
+        items.add(new NavigationItem("Dashboard", R.drawable.dash));
+        items.add(new NavigationItem("Wake Me",R.drawable.wake));
+        items.add(new NavigationItem("TimeTable",R.drawable.timetable));
+        items.add(new NavigationItem("Attendance",R.drawable.attendance));
+        items.add(new NavigationItem("Course", R.drawable.course));
+        items.add(new NavigationItem("Alarm",R.drawable.ic_action_clock));
+        items.add(new NavigationItem("Settings",R.drawable.gear));
+        items.add(new NavigationItem("Help", R.drawable.help));
         return items;
     }
 
