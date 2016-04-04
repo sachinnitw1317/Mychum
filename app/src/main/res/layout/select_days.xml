@@ -7,15 +7,22 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text=" Days to be displayed in Timetable : "
+        android:textColor="@color/myAccentColor"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:layout_marginBottom="20dp"
+        android:text=" Days to be displayed in Timetable "
         android:id="@+id/textView" />
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Monday"
+        android:textSize="16dp"
+        android:textColor="#424242"
         android:id="@+id/cb_mon"
+        android:layout_marginBottom="10dp"
         android:checked="true" />
 
     <CheckBox
@@ -23,27 +30,39 @@
         android:layout_height="wrap_content"
         android:text="Tuesday"
         android:id="@+id/cb_tue"
+        android:textSize="16dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="#424242"
         android:checked="true" />
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Wednesday"
+        android:textSize="16dp"
+        android:textColor="#424242"
         android:id="@+id/cb_wed"
+        android:layout_marginBottom="10dp"
         android:checked="true" />
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:textColor="#424242"
         android:text="Thursday"
         android:id="@+id/cb_thu"
+        android:layout_marginBottom="10dp"
         android:checked="true" />
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Friday"
+        android:textSize="16dp"
+        android:textColor="#424242"
         android:id="@+id/cb_fri"
+        android:layout_marginBottom="10dp"
         android:checked="true" />
 
     <CheckBox
@@ -51,20 +70,29 @@
         android:layout_height="wrap_content"
         android:text="Saturday"
         android:id="@+id/cb_sat"
+        android:layout_marginBottom="10dp"
+        android:textSize="16dp"
+        android:textColor="#424242"
         android:checked="false" />
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sunday"
+        android:textSize="16dp"
+
+        android:textColor="#424242"
         android:id="@+id/cb_sun"
+        android:layout_marginBottom="20dp"
         android:checked="false" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Number of Slots:"
+        android:textSize="16dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="#424242"
+        android:text="Number of Slots"
         android:id="@+id/textView2" />
 
     <EditText
@@ -72,14 +100,18 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
+        android:textColor="#424242"
         android:id="@+id/et_slotsCount"
         android:text="10" />
-
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="Update"
+        android:layout_marginTop="40dp"
+        android:background="@color/btn_logut_bg"
         android:id="@+id/bt_updateDays"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center"
+        android:text="Update"
+        android:textColor="@color/white"
 
+        />
 </LinearLayout>
