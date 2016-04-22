@@ -1,11 +1,79 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="dora.mychum.Attendance">
-       <LinearLayout android:background="#f5f5f5f5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="2.0dip">
-        <TextView android:textAppearance="?android:textAppearanceMedium" android:textStyle="bold" android:textColor="#ff000000" android:gravity="center" android:id="@+id/day1" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Courses" android:layout_weight="1.0" />
-        <TextView android:textAppearance="?android:textAppearanceMedium" android:textStyle="bold" android:textColor="#ff000000" android:gravity="center" android:id="@+id/day2" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Attended" android:layout_weight="1.0" />
-        <TextView android:textAppearance="?android:textAppearanceMedium" android:textStyle="bold" android:textColor="#ff000000" android:gravity="center" android:id="@+id/day3" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Total" android:layout_weight="1.0" />
-        <TextView android:textAppearance="?android:textAppearanceMedium" android:textStyle="bold" android:textColor="#ff000000" android:gravity="center" android:id="@+id/day4" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="%" android:layout_weight="1.0" />
-       </LinearLayout>
-    <ListView android:id="@+id/lv_attendance" android:layout_width="fill_parent" android:layout_height="wrap_content" android:divider="@null" />
-</FrameLayout>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="dora.mychum.Attendance">
+
+    <TableLayout
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/myPrimaryColor"
+        android:stretchColumns="*"
+        >
+
+        <TableRow
+            android:layout_marginTop="10dp"
+            android:layout_width="0dp">
+
+        <TextView
+            android:id="@+id/day1"
+            android:layout_height="wrap_content"
+            android:layout_width="45dp"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="Courses"
+            android:layout_gravity="center"
+            android:capitalize="characters"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/day2"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:text="Attended"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/day3"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:text="Total"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/day4"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:text="%"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+    <View
+        android:layout_below="@+id/head"
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@drawable/toolbar_dropshadow"
+        android:layout_marginBottom="10dp"/>
+
+    <ListView
+        android:id="@+id/lv_attendance"
+        android:layout_below="@+id/bar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:divider="@null" />
+</RelativeLayout>

@@ -110,9 +110,23 @@ public class TimetableFragment extends Fragment {
 
         TableRow tRow = new TableRow(this.getActivity());
         tRow.setGravity(Gravity.CENTER_HORIZONTAL);
+        tRow.setLayoutParams(new TableRow.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,30));
         TextView tv_days[] = new TextView[7];
         String day_names[] = {"Mon","Tue","Wed","Thu","Fri","Sat","Sun"};
         String pref[] = new String[7];
+        String pref1[] = new String[7];
+        int g=0;
+        int width=0;
+        for (int i=0; i<7; i++)
+        {
+            pref1[i] = sharedpreferences.getString(day_names[i],null);
+            if( pref1[i] != null && pref1[i].equals("true"))
+            {
+                g++;
+            }
+            width=180/g;
+        }
+        Toast.makeText(getActivity().getApplicationContext(),width+"  ",Toast.LENGTH_SHORT).show();
         for (int i=0; i<7; i++)
         {
              pref[i] = sharedpreferences.getString(day_names[i],null);
@@ -121,6 +135,9 @@ public class TimetableFragment extends Fragment {
                 tv_days[i] = new TextView(this.getActivity());
                 tv_days[i].setText(day_names[i]);
                 tv_days[i].setTypeface(Typeface.DEFAULT_BOLD);
+                tv_days[i].setWidth(width);
+                tv_days[i].setGravity(Gravity.CENTER);
+                tv_days[i].setTextColor(getResources().getColor(R.color.btn_login));
                 tRow.addView(tv_days[i]);
             }
 
