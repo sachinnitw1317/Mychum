@@ -21,7 +21,7 @@
         <FrameLayout
             android:id="@+id/container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="416dp"
             android:clickable="true" >
 
             <Button
@@ -30,7 +30,24 @@
                 android:text="GO!"
                 android:id="@+id/go"
                 android:layout_gravity="center" />
+
         </FrameLayout>
+        <!-- Text Label -->
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:text="Category:"
+            android:layout_marginBottom="5dp"
+            />
+
+        <!-- Spinner Element -->
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:prompt="@string/spinner_title"
+            />
     </LinearLayout>
     <!-- android:layout_marginTop="?android:attr/actionBarSize"-->
     <dora.mychum.ScrimInsetsFrameLayout

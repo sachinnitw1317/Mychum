@@ -2,8 +2,10 @@ package dora.mychum;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
+import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
@@ -12,8 +14,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import dora.mychum.Alarm.AlarmFragment;
 import dora.mychum.Timetable.AttendanceFragment;
@@ -24,7 +32,7 @@ import dora.mychum.Timetable.TimetableFragment;
 
 
 public class MainActivity extends ActionBarActivity
-        implements TimetableFragment.OnFragmentInteractionListener, NavigationDrawerCallbacks {
+        implements TimetableFragment.OnFragmentInteractionListener, NavigationDrawerCallbacks,AdapterView.OnItemSelectedListener {
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -51,6 +59,7 @@ public class MainActivity extends ActionBarActivity
             }
         });
 
+
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getFragmentManager().findFragmentById(R.id.fragment_drawer);
 
@@ -59,6 +68,27 @@ public class MainActivity extends ActionBarActivity
         mNavigationDrawerFragment.setup(R.id.fragment_drawer, (DrawerLayout) findViewById(R.id.drawer), mToolbar);
         // populate the navigation drawer
         mNavigationDrawerFragment.setUserData("Devendra Dora", "dev.tech24@gmail.com", BitmapFactory.decodeResource(getResources(), R.drawable.avatar));
+
+
+        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+
+        // Spinner click listener
+        spinner.setOnItemSelectedListener(this);
+
+        // Spinner Drop down elements
+        List<String>  categories = new ArrayList<String>();
+        categories.add("Normal");
+        categories.add("Silent");
+        categories.add("Vibrate");
+
+        // Creating adapter for spinner
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter <String>(this, android.R.layout.simple_spinner_item, categories);
+
+        // Drop down layout style - list view with radio button
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        // attaching data adapter to spinner
+        spinner.setAdapter(dataAdapter);
     }
 
     @Override
@@ -175,8 +205,35 @@ public class MainActivity extends ActionBarActivity
         return super.onOptionsItemSelected(item);
     }
     @Override
-    public void onFragmentInteraction(Uri uri){}
+    public void onFragmentInteraction(Uri uri){
+
+    }
 
 
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String item = parent.getItemAtPosition(position).toString();
+        AudioManager audMangr;
+        audMangr= (AudioManager) getBaseContext().getSystemService(Context.AUDIO_SERVICE);
 
+//For Normal mode
+        if (position==0)
+        audMangr.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
+
+//For Silent mode
+        if (position==1)
+        audMangr.setRingerMode(AudioManager.RINGER_MODE_SILENT);
+
+//For Vibrate mode
+        if (position==2)
+        audMangr.setRingerMode(AudioManager.RINGER_MODE_VIBRATE);
+        // Showing selected spinner item
+        Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
 }
