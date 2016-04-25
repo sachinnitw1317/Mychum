@@ -1,7 +1,8 @@
-package dora.mychum.Timetable;
+package dora.mychum;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import dora.mychum.DatabaseHelper;
+import dora.mychum.Mymap;
 import dora.mychum.R;
 
 /**
@@ -38,7 +40,7 @@ public class SettingsFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    Button map;
     DatabaseHelper dbhelper_obj;
     SQLiteDatabase db_obj;
 
@@ -83,6 +85,14 @@ public class SettingsFragment extends Fragment {
         Toast.makeText(SettingsFragment.this.getActivity(), "Entered", Toast.LENGTH_SHORT).show();
         sharedpreferences = this.getActivity().getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         final SharedPreferences.Editor editor = sharedpreferences.edit();
+        map= (Button) fragView.findViewById(R.id.map);
+        map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent I=new Intent(getActivity().getApplication().getBaseContext(),Mymap.class);
+                startActivity(I);
+            }
+        });
         for (int i=0; i<7; i++)
         {
             cb_days[i] = (CheckBox) fragView.findViewById(cb_ids[i]);
@@ -109,6 +119,7 @@ public class SettingsFragment extends Fragment {
                 Toast.makeText(SettingsFragment.this.getActivity(), "Updated", Toast.LENGTH_SHORT).show();
             }
         });
+
 
         return fragView;
     }

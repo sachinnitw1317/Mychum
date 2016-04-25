@@ -27,12 +27,12 @@ import dora.mychum.Alarm.AlarmFragment;
 import dora.mychum.Timetable.AttendanceFragment;
 import dora.mychum.Timetable.ChangeTimeFragment;
 import dora.mychum.Timetable.CoursesFragment;
-import dora.mychum.Timetable.SettingsFragment;
+import dora.mychum.SettingsFragment;
 import dora.mychum.Timetable.TimetableFragment;
 
 
 public class MainActivity extends ActionBarActivity
-        implements TimetableFragment.OnFragmentInteractionListener, NavigationDrawerCallbacks,AdapterView.OnItemSelectedListener {
+        implements TimetableFragment.OnFragmentInteractionListener, NavigationDrawerCallbacks{
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -70,25 +70,7 @@ public class MainActivity extends ActionBarActivity
         mNavigationDrawerFragment.setUserData("Devendra Dora", "dev.tech24@gmail.com", BitmapFactory.decodeResource(getResources(), R.drawable.avatar));
 
 
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
 
-        // Spinner click listener
-        spinner.setOnItemSelectedListener(this);
-
-        // Spinner Drop down elements
-        List<String>  categories = new ArrayList<String>();
-        categories.add("Normal");
-        categories.add("Silent");
-        categories.add("Vibrate");
-
-        // Creating adapter for spinner
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter <String>(this, android.R.layout.simple_spinner_item, categories);
-
-        // Drop down layout style - list view with radio button
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        // attaching data adapter to spinner
-        spinner.setAdapter(dataAdapter);
     }
 
     @Override
@@ -210,30 +192,5 @@ public class MainActivity extends ActionBarActivity
     }
 
 
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        String item = parent.getItemAtPosition(position).toString();
-        AudioManager audMangr;
-        audMangr= (AudioManager) getBaseContext().getSystemService(Context.AUDIO_SERVICE);
 
-//For Normal mode
-        if (position==0)
-        audMangr.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
-
-//For Silent mode
-        if (position==1)
-        audMangr.setRingerMode(AudioManager.RINGER_MODE_SILENT);
-
-//For Vibrate mode
-        if (position==2)
-        audMangr.setRingerMode(AudioManager.RINGER_MODE_VIBRATE);
-        // Showing selected spinner item
-        Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
-
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-
-    }
 }

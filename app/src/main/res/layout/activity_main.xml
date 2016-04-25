@@ -29,7 +29,8 @@
                 android:layout_height="wrap_content"
                 android:text="GO!"
                 android:id="@+id/go"
-                android:layout_gravity="center" />
+                android:layout_gravity="center"
+                android:visibility="gone"/>
 
         </FrameLayout>
         <!-- Text Label -->
@@ -39,6 +40,7 @@
             android:layout_marginTop="10dip"
             android:text="Category:"
             android:layout_marginBottom="5dp"
+            android:visibility="gone"
             />
 
         <!-- Spinner Element -->
@@ -47,6 +49,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:prompt="@string/spinner_title"
+            android:visibility="gone"
             />
     </LinearLayout>
     <!-- android:layout_marginTop="?android:attr/actionBarSize"-->

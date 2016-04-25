@@ -4,7 +4,7 @@
     <string name="drawer_close">Menu closed</string>
     <string name="action_settings">Settings</string>
 
-<!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="subjects">Courses</string>
@@ -12,4 +12,9 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="spinner_title">Select Category</string>
+    <string name="action_search">Search</string>
+    <string name="search_hint">Search Places</string>
+    <string name="search_settings">Search Places</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_location_">Location_Activity</string>
 </resources>
